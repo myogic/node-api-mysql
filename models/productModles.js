@@ -35,6 +35,7 @@ Product.findById = function(id, result) {
     });
 };
 
+
 Product.findAll = function(result) {
     dbConn.query("SELECT * FROM products", function(err, res) {
         if (err) {
@@ -62,6 +63,18 @@ Product.delete = function(id, result) {
     dbConn.query("DELETE FROM products WHERE id = ?", [id], function(err, res) {
         if (err) {
             console.log("error", err);
+        } else {
+            result(null, res);
+        }
+    });
+};
+
+
+Product.stock = function(result) {
+    dbConn.query("SELECT SUM(quantity) AS 'Total Stock' FROM products", function(err, res) {
+        if (err) {
+            console.log("error : ", err);
+            result(err, null);
         } else {
             result(null, res);
         }

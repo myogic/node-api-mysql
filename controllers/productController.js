@@ -63,3 +63,13 @@ exports.delete = function(req, res) {
         });
     });
 };
+
+exports.getStock = function(req, res) {
+    Product.stock(function(err, product) {
+        console.log('Controller');
+        if (err)
+            res.send(err)
+        console.log('res', product);
+        res.send(product);
+    });
+};

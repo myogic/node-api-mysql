@@ -26,6 +26,7 @@ const ProductController = require('../controllers/productController');
 
 //get all product
 router.get('/products', ProductController.findAll);
+router.get('/stock', ProductController.getStock);
 
 // create a new Product
 router.post('/product', ProductController.create);
