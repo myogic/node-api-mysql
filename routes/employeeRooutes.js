@@ -6,18 +6,37 @@ const employeeController = require('../controllers/employeeController');
 
 
 // Retrieve all employees
-router.get('/', employeeController.findAll);
+router.get('/employees', employeeController.findAll);
 
 // create a new employee
-router.post('/', employeeController.create);
+router.post('/employees', employeeController.create);
 
 // Retrieve a single employee with od
-router.get('/:id', employeeController.findById);
+router.get('/employees/:id', employeeController.findById);
 
 // Update a employee with id
-router.put('/:id', employeeController.update);
+router.put('/employees/:id', employeeController.update);
 
 // Delete a employee with id
-router.delete('/:id', employeeController.delete);
+router.delete('/employees/:id', employeeController.delete);
+
+
+
+const ProductController = require('../controllers/productController');
+
+//get all product
+router.get('/products', ProductController.findAll);
+
+// create a new Product
+router.post('/product', ProductController.create);
+
+// get a single Product
+router.get('/product/:id', ProductController.findById);
+
+// Update Product with ID
+router.put('/product/:id', ProductController.update);
+
+// Delete a Product by Id
+router.delete('/product/:id', ProductController.delete);
 
 module.exports = router
