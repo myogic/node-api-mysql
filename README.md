@@ -13,7 +13,7 @@ A Simple Route API using Node JS and MYSQL Database
 - PUT /api/v1/employees/<employee_id>: update a employee completely
 
 
-### Employess API
+### Products API
 - GET /api/v1/products: will give all product stored in database
 - GET /api/v1/product/<product_id>: will give a specific product with product_id.
 - POST /api/v1/product : create a new product
